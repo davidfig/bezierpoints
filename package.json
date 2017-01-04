@@ -1,6 +1,6 @@
 {
   "name": "bezierpoints",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "PIXI graphics function to generate a smooth line through specific points",
   "main": "bezierpoints.js",
   "scripts": {
