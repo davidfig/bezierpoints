@@ -26,6 +26,29 @@ function bezierPoints(g, points)
             ys.push(points[i].y);
         }
     }
+
+    // not enough points to draw
+    if ((isArray && points.length <= 2) || (!isArray && points.length <= 1))
+    {
+        return;
+    }
+
+    // two points creates a line
+    if ((isArray && points.length === 4) || (!isArray && points.length === 2))
+    {
+        if (isArray)
+        {
+            g.moveTo(points[0], points[1])
+                .lineTo(points[2], points[3]);
+        }
+        else
+        {
+            g.moveTo(points[0].x, points[0].y)
+                .lineTo(points[1].x, points[1].y);
+        }
+        return;
+    }
+
     const xResults = updateCoordinate(xs);
     const yResults = updateCoordinate(ys);
     const x = isArray ? points[0] : points[0].x;
