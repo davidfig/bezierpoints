@@ -1,0 +1,24 @@
+{
+  "name": "bezierpoints",
+  "version": "1.0.0",
+  "description": "PIXI graphics function to generate a smooth line through specific points",
+  "main": "bezierpoints.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidfig/bezierpoints.git"
+  },
+  "keywords": [
+    "bezier",
+    "PIXI",
+    "points"
+  ],
+  "author": "David Figatner (YOPEY YOPEY LLC)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/davidfig/bezierpoints/issues"
+  },
+  "homepage": "https://github.com/davidfig/bezierpoints#readme"
+}

@@ -12,30 +12,26 @@
 function bezierPoints(g, points)
 {
     const isArray = typeof points[0].x === 'undefined';
-    const points = this.points;
-    const x = [], y = [];
-    if (isArray)
+    const xs = [], ys = [];
+    for (let i = 0, _i = points.length; i < _i; i += isArray ? 2 : 1)
     {
-        for (let i = 0, _i = this.points.length; i < _i; i += isArray ? 2 : 1)
+        if (isArray)
         {
-            if (isArray)
-            {
-                x.push(points[i]);
-                y.push(points[i + 1]);
-            }
-            else
-            {
-                x.push(points[i].x);
-                y.push(points[i].y);
-            }
+            xs.push(points[i]);
+            ys.push(points[i + 1]);
+        }
+        else
+        {
+            xs.push(points[i].x);
+            ys.push(points[i].y);
         }
     }
-    const xResults = updateCoordinate(x);
-    const yResults = updateCoordinate(y);
+    const xResults = updateCoordinate(xs);
+    const yResults = updateCoordinate(ys);
     const x = isArray ? points[0] : points[0].x;
     const y = isArray ? points[1] : points[0].y;
     g.moveTo(x, y);
-    for (let i = 0, _i = this.points.length - 1; i < _i; i += isArray ? 2 : 1)
+    for (let i = 0, _i = points.length - 1; i < _i; i += isArray ? 2 : 1)
     {
         const index = isArray ? i / 2 : i;
         const x2 = isArray ? points[i + 2] : points[i + 1].x;
@@ -102,6 +98,5 @@ function updateCoordinate(K)
     p2[n - 1] = 0.5 * (K[n] + p1[n - 1]);
     return [p1, p2];
 }
-
 
 module.exports = bezierPoints;
